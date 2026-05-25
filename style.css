@@ -1,891 +1,573 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
 
-html{
-  scroll-behavior: smooth;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-body{
+  <title>NOUX | Software Developer</title>
 
-  font-family: 'Montserrat', sans-serif;
+  <!-- FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  background: #08111d;
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  color: white;
+  <!-- ICONS -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-  overflow-x: hidden;
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 
-}
+</head>
 
-/* ========================================= */
-/* VARIÁVEIS */
-/* ========================================= */
+<body>
 
-:root{
+  <!-- HEADER -->
 
-  --dark-blue: #1E2532;
-  --purple-dark: #210C48;
-  --gray: #7E8396;
-  --purple: #825DC6;
-  --purple-light: #D5B8F8;
+  <header class="header">
 
-}
+    <div class="container nav-container">
 
-/* ========================================= */
-/* CONTAINER */
-/* ========================================= */
+      <!-- LOGO -->
+      <a href="#" class="logo">
+        <img src="assets/noux.png" alt="Logo noux">
+      </a>
 
-.container{
+      <!-- MENU -->
+      <nav class="navbar">
 
-  width: 90%;
-  max-width: 1300px;
+        <a href="#home">Home</a>
+        <a href="#services">Serviços</a>
+        <a href="#team">Equipe</a>
+        <a href="#project">Projeto</a>
+        <a href="#contact">Contato</a>
 
-  margin: auto;
+      </nav>
 
-}
+      <!-- BOTÕES -->
+      <div class="nav-buttons">
 
-/* ========================================= */
-/* HEADER */
-/* ========================================= */
+        <button class="btn-outline">
+          Login
+        </button>
 
-.header{
+        <button class="btn-primary">
+          Começar agora
+        </button>
 
-  position: fixed;
+      </div>
 
-  width: 100%;
+    </div>
 
-  top: 0;
-  left: 0;
+  </header>
 
-  z-index: 999;
+  <!-- HERO / CARROSSEL -->
 
-  background: rgba(8,17,29,0.45);
+  <section class="hero" id="home">
 
-  backdrop-filter: blur(15px);
+    <div class="slider">
 
-  border-bottom:
-  1px solid rgba(255,255,255,0.08);
+      <!-- SLIDE 1 -->
 
-}
+      <div class="slide active">
 
-.nav-container{
+        <img src="assets/carrossel1.png" alt="Imagem Principal">
 
-  height: 90px;
+        <!-- OVERLAY -->
+        <div class="overlay"></div>
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+        <!-- TEXTO -->
+        <div class="hero-content">
 
-}
+          <span class="tag">
+            Desenvolvimento • UI/UX • Tecnologia
+          </span>
 
-/* ========================================= */
-/* LOGO */
-/* ========================================= */
+          <h1>
+            CONSTRUINDO
+            O FUTURO DIGITAL
+          </h1>
 
-.logo img{
+          <p>
+            Combinando modernidade, versatilidade e inovação
+            para impulsionar os seus negócios.
+          </p>
 
-  width: 160px;
+          <a href="#services" class="btn-primary">
+            Saiba mais
+          </a>
 
-}
+        </div>
 
-/* ========================================= */
-/* MENU */
-/* ========================================= */
+      </div>
 
-.navbar{
+      <!-- SLIDE 2 -->
 
-  display: flex;
-  gap: 35px;
+      <div class="slide">
 
-}
+        <img src="assets/desenvolvendo.png" alt="Desenvolvimento">
 
-.navbar a{
+        <div class="overlay"></div>
 
-  color: white;
+        <div class="hero-content">
 
-  text-decoration: none;
+          <span class="tag">
+            Sistemas Inteligentes
+          </span>
 
-  font-size: 15px;
-  font-weight: 500;
+          <h1>
+            SOFTWARES
+            QUE GERAM RESULTADOS
+          </h1>
 
-  transition: 0.3s;
+          <p>
+            Os melhores softwares para quem busca
+            performance, experiência e inovação.
+          </p>
 
-}
+          <a href="#services" class="btn-primary">
+            Conhecer serviços
+          </a>
 
-.navbar a:hover{
+        </div>
 
-  color: var(--purple-light);
+      </div>
 
-}
+      <!-- SLIDE 3 -->
 
-/* ========================================= */
-/* BOTÕES */
-/* ========================================= */
+      <div class="slide">
 
-.nav-buttons{
+  <img src="assets/reuniao-negocios.png" alt="reunião">
 
-  display: flex;
-  gap: 15px;
+        <div class="overlay"></div>
 
-}
+        <div class="hero-content">
 
-.btn-outline,
-.btn-primary{
+          <span class="tag">
+            Experiências Digitais
+          </span>
 
-  border: none;
+          <h1>
+            EXPERIÊNCIAS
+            DIGITAIS QUE CONECTAM
+          </h1>
 
-  cursor: pointer;
+          <p>
+            Impulsionando empresas para o futuro
+            através da tecnologia.
+          </p>
 
-  border-radius: 999px;
+          <a href="#project" class="btn-primary">
+            Ver projetos
+          </a>
 
-  font-family: inherit;
+        </div>
 
-  transition: 0.3s;
+      </div>
 
-}
+    </div>
 
-.btn-outline{
+    <!-- BOTÕES -->
 
-  padding: 12px 28px;
+    <div class="slider-buttons">
 
-  background: rgba(255,255,255,0.06);
+      <button id="prev">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
 
-  color: white;
+      <button id="next">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
 
-  border:
-  1px solid rgba(255,255,255,0.2);
+    </div>
 
-}
+    <!-- DOTS -->
 
-.btn-primary{
+    <div class="slider-dots">
 
-  padding: 14px 30px;
+      <span class="dot active-dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
 
-  background:
-  linear-gradient(
-    135deg,
-    var(--purple-light),
-    var(--purple)
-  );
+    </div>
 
-  color: white;
+  </section>
 
-  box-shadow:
-  0 0 25px rgba(130,93,198,0.4);
+  <!-- SERVIÇOS -->
 
-}
+  <section class="services" id="services">
 
-.btn-primary:hover{
+    <div class="container">
 
-  transform: translateY(-3px);
+      <h2 class="section-title">
+        Nossos Serviços
+      </h2>
 
-}
+      <div class="cards">
 
-/* ========================================= */
-/* HERO */
-/* ========================================= */
+        <!-- CARD -->
 
-.hero{
+        <div class="service-card">
 
-  width: 100%;
-  height: 100vh;
+          <div class="card-icon">
+            <i class="fa-solid fa-code"></i>
+          </div>
 
-  position: relative;
+          <h3>Desenvolvimento</h3>
 
-  overflow: hidden;
+          <p>
+            Nosso foco é criar aplicações web e mobile
+            com performance, experiência e crescimento.
+          </p>
 
-}
+        </div>
 
-/* ========================================= */
-/* SLIDER */
-/* ========================================= */
+        <!-- CARD -->
 
-.slider{
+        <div class="service-card">
 
-  width: 100%;
-  height: 100%;
+          <div class="card-icon">
+            <i class="fa-solid fa-gear"></i>
+          </div>
 
-  position: relative;
+          <h3>Automação</h3>
 
-}
+          <p>
+            Automatizamos processos para aumentar produtividade,
+            reduzir erros e otimizar operações.
+          </p>
 
-.slide{
+        </div>
 
-  width: 100%;
-  height: 100%;
+        <!-- CARD -->
 
-  position: absolute;
+        <div class="service-card">
 
-  opacity: 0;
-  visibility: hidden;
+          <div class="card-icon">
+            <i class="fa-solid fa-lightbulb"></i>
+          </div>
 
-  transition: 0.8s;
+          <h3>Soluções Inteligentes</h3>
 
-}
+          <p>
+            Criamos soluções tecnológicas modernas focadas
+            em inovação, performance e crescimento.
+          </p>
 
-.slide.active{
+        </div>
 
-  opacity: 1;
-  visibility: visible;
+      </div>
 
-}
+    </div>
 
-.slide img{
+  </section>
 
-  width: 100%;
-  height: 100%;
+  <!-- EQUIPE -->
 
-  object-fit: cover;
+  <section class="team" id="team">
 
-  object-position: center;
+    <div class="container">
 
-  animation: zoom 10s linear infinite;
+      <h2 class="section-title">
+        Nossa Equipe
+      </h2>
 
-}
+      <div class="team-grid">
 
-@keyframes zoom{
+        <!-- MEMBRO -->
 
-  from{
-    transform: scale(1.05);
-  }
+        <div class="team-card">
 
-  to{
-    transform: scale(1.12);
-  }
+          <div class="team-image">
+            <img src="assets/integrante1.jpeg" alt="Laura">
+          </div>
 
-}
+          <h3>Laura Amaral</h3>
 
-/* ========================================= */
-/* OVERLAY */
-/* ========================================= */
+          <span>UI/UX Designer</span>
 
-.overlay{
+        </div>
 
-  position: absolute;
+        <!-- MEMBRO -->
 
-  inset: 0;
+        <div class="team-card">
 
-  
+          <div class="team-image">
+            <img src="assets/felipe.png" alt="Felipe">
+          </div>
 
-}
+          <h3>Felipe Ribeiro</h3>
 
-/* ========================================= */
-/* HERO CONTENT */
-/* ========================================= */
+          <span>Frontend Developer</span>
 
-.hero-content{
+        </div>
 
-  position: absolute;
+        <!-- MEMBRO -->
 
-  top: 50%;
-  left: 10%;
+        <div class="team-card">
 
-  transform: translateY(-50%);
+          <div class="team-image">
+            <img src="assets/rafael.png" alt="Rafael">
+          </div>
 
-  max-width: 700px;
+          <h3>Rafael Ferrete</h3>
 
-  z-index: 10;
+          <span>Backend Developer</span>
 
-}
+        </div>
 
-.hero-logo{
+      </div>
 
-  margin-bottom: 25px;
+    </div>
 
-}
+  </section>
 
-.hero-logo img{
+  <!-- PROJETO -->
 
-  width: 180px;
+  <section class="project" id="project">
 
-}
+    <div class="container project-container">
 
-.hero-content h1{
+      <!-- TEXTO -->
 
-  font-size: 72px;
+      <div class="project-text">
 
-  line-height: 1.1;
+        <span class="project-tag">
+          Projeto em destaque
+        </span>
 
-  margin-bottom: 25px;
+        <h2>
+          Rota Saúde
+        </h2>
 
-}
+        <p>
+          O Rota Saúde é uma solução digital criada
+          para conectar agentes de saúde e pacientes,
+          otimizando atendimentos domiciliares.
+        </p>
 
-.hero-content p{
+        <p>
+          A plataforma melhora o acompanhamento
+          de pacientes e moderniza a rotina
+          dos profissionais da saúde.
+        </p>
 
-  font-size: 20px;
+        <!-- BOTÕES -->
 
-  color: #e0e0e0;
+        <div class="project-buttons">
 
-  line-height: 1.8;
+          <a href="rota-saude.html" class="btn-primary">
+            Conhecer projeto
+          </a>
 
-  margin-bottom: 35px;
+          <a href="https://youtu.be/hm53JdEea9E?si=12CqnuNCPWCRWoyg"
+             target="_blank"
+             class="btn-outline project-video-btn">
 
-}
+            <i class="fa-solid fa-play"></i>
+            Ver Pitch
 
-/* ========================================= */
-/* BOTÕES SLIDER */
-/* ========================================= */
+          </a>
 
-.slider-buttons{
+        </div>
 
-  position: absolute;
+      </div>
 
-  width: 100%;
+      <!-- MOCKUP -->
 
-  top: 50%;
+      <div class="project-image">
 
-  transform: translateY(-50%);
+        <img src="assets/mockup.png"
+        alt="Mockup Rota Saúde">
 
-  display: flex;
-  justify-content: space-between;
+      </div>
 
-  padding: 0 30px;
+    </div>
 
-  z-index: 100;
+  </section>
 
-}
+  <!-- CONTATO -->
 
-.slider-buttons button{
+  <section class="contact" id="contact">
 
-  width: 60px;
-  height: 60px;
+    <div class="container">
 
-  border-radius: 50%;
+      <h2 class="section-title">
+        Entre em Contato
+      </h2>
 
-  border: none;
+      <form class="contact-form">
 
-  cursor: pointer;
+        <div class="input-group">
 
-  color: white;
+          <div class="input-box">
 
-  font-size: 18px;
+            <label>Nome</label>
 
-  background: rgba(255,255,255,0.12);
+            <input type="text"
+            placeholder="Digite seu nome">
 
-  backdrop-filter: blur(10px);
+          </div>
 
-}
+          <div class="input-box">
 
-/* ========================================= */
-/* DOTS */
-/* ========================================= */
+            <label>Email</label>
 
-.slider-dots{
+            <input type="email"
+            placeholder="Digite seu email">
 
-  position: absolute;
+          </div>
 
-  bottom: 40px;
-  left: 50%;
+        </div>
 
-  transform: translateX(-50%);
+        <div class="input-box">
 
-  display: flex;
-  gap: 12px;
+          <label>Mensagem</label>
 
-  z-index: 100;
+          <textarea
+          placeholder="Digite sua mensagem"></textarea>
 
-}
+        </div>
 
-.dot{
+        <button class="btn-primary submit-btn">
+          Enviar mensagem
+        </button>
 
-  width: 14px;
-  height: 14px;
+      </form>
 
-  border-radius: 50%;
+    </div>
 
-  background: rgba(255,255,255,0.3);
+  </section>
 
-  cursor: pointer;
+  <!-- FOOTER -->
 
-}
+  <footer class="footer">
 
-.active-dot{
+    <div class="container footer-container">
 
-  background: var(--purple-light);
+      <!-- LOGO -->
 
-  box-shadow:
-  0 0 15px rgba(213,184,248,0.9);
+      <div class="footer-logo">
 
-}
+        <img src="assets/noux.png" alt="Logo Noux">
 
-/* ========================================= */
-/* SECTIONS */
-/* ========================================= */
+      </div>
 
-section{
-  padding: 120px 0;
-}
+      <!-- LINKS -->
 
-.section-title{
+      <div class="footer-links">
 
-  text-align: center;
+        <a href="#">Home</a>
+        <a href="#">Serviços</a>
+        <a href="#">Equipe</a>
+        <a href="#">Projeto</a>
 
-  font-size: 48px;
+      </div>
 
-  margin-bottom: 70px;
+      <!-- SOCIAL -->
 
-}
+      <div class="footer-social">
 
-/* ========================================= */
-/* SERVIÇOS */
-/* ========================================= */
+        <a href="#">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
 
-.services{
+        <a href="#">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
 
-  background:
-  linear-gradient(
-    180deg,
-    #08111d,
-    #101c2e
-  );
+        <a href="#">
+          <i class="fa-brands fa-github"></i>
+        </a>
 
-}
+      </div>
 
-.cards{
+    </div>
 
-  display: grid;
+    <p class="copyright">
+      © 2026 NOUX — Todos os direitos reservados
+    </p>
 
-  grid-template-columns: repeat(3,1fr);
+  </footer>
 
-  gap: 30px;
+  <!-- SCRIPT -->
 
-}
+  <script>
 
-.service-card{
+    const slides = document.querySelectorAll(".slide");
+    const dots = document.querySelectorAll(".dot");
 
-  padding: 45px 30px;
+    const next = document.getElementById("next");
+    const prev = document.getElementById("prev");
 
-  border-radius: 24px;
+    let current = 0;
 
-  background: rgba(255,255,255,0.05);
+    function updateSlider(index){
 
-  border:
-  1px solid rgba(255,255,255,0.08);
+      slides.forEach(slide => {
+        slide.classList.remove("active");
+      });
 
-  text-align: center;
+      dots.forEach(dot => {
+        dot.classList.remove("active-dot");
+      });
 
-  transition: 0.4s;
+      slides[index].classList.add("active");
+      dots[index].classList.add("active-dot");
 
-}
+    }
 
-.service-card:hover{
+    next.addEventListener("click", () => {
 
-  transform: translateY(-8px);
+      current++;
 
-}
+      if(current >= slides.length){
+        current = 0;
+      }
 
-.card-icon{
+      updateSlider(current);
 
-  width: 90px;
-  height: 90px;
+    });
 
-  margin: auto auto 30px;
+    prev.addEventListener("click", () => {
 
-  border-radius: 20px;
+      current--;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+      if(current < 0){
+        current = slides.length - 1;
+      }
 
-  background:
-  linear-gradient(
-    135deg,
-    rgba(213,184,248,0.2),
-    rgba(130,93,198,0.15)
-  );
+      updateSlider(current);
 
-  font-size: 35px;
+    });
 
-  color: var(--purple-light);
+    dots.forEach((dot, index) => {
 
-}
+      dot.addEventListener("click", () => {
 
-.service-card h3{
+        current = index;
 
-  margin-bottom: 18px;
+        updateSlider(current);
 
-  font-size: 24px;
+      });
 
-}
+    });
 
-.service-card p{
+    setInterval(() => {
 
-  color: #d0d0d0;
+      current++;
 
-  line-height: 1.7;
+      if(current >= slides.length){
+        current = 0;
+      }
 
-}
+      updateSlider(current);
 
-/* ========================================= */
-/* EQUIPE */
-/* ========================================= */
+    }, 5000);
 
-.team{
+  </script>
 
-  background:
-  linear-gradient(
-    180deg,
-    #101c2e,
-    #08111d
-  );
-
-}
-
-.team-grid{
-
-  display: grid;
-
-  grid-template-columns: repeat(3,1fr);
-
-  gap: 30px;
-
-}
-
-.team-card{
-
-  padding: 35px;
-
-  border-radius: 24px;
-
-  background: rgba(255,255,255,0.05);
-
-  border:
-  1px solid rgba(255,255,255,0.08);
-
-  text-align: center;
-
-  transition: 0.4s;
-
-}
-
-.team-card:hover{
-
-  transform: translateY(-8px);
-
-}
-
-.team-image{
-
-  width: 160px;
-  height: 160px;
-
-  margin: auto auto 25px;
-
-  border-radius: 50%;
-
-  overflow: hidden;
-
-  border:
-  3px solid rgba(213,184,248,0.4);
-
-}
-
-.team-image img{
-
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-}
-
-.team-card h3{
-
-  margin-bottom: 10px;
-
-  font-size: 24px;
-
-}
-
-.team-card span{
-
-  color: var(--purple-light);
-
-}
-
-/* ========================================= */
-/* PROJETO */
-/* ========================================= */
-
-.project{
-
-  background:
-  linear-gradient(
-    180deg,
-    #08111d,
-    #101c2e
-  );
-
-}
-
-.project-container{
-
-  display: grid;
-
-  grid-template-columns: 1fr 1fr;
-
-  gap: 60px;
-
-  align-items: center;
-
-}
-
-.project-text h2{
-
-  font-size: 52px;
-
-  margin-bottom: 25px;
-
-}
-
-.project-text p{
-
-  color: #d0d0d0;
-
-  line-height: 1.9;
-
-  margin-bottom: 25px;
-
-}
-
-.project-image{
-
-  display: flex;
-  justify-content: center;
-
-}
-
-.project-image img{
-
-  width: 300%;
-  max-width: 430px;
-
-  filter:
-  drop-shadow(
-    0 0 35px rgba(130,93,198,0.35)
-  );
-
-}
-
-/* ========================================= */
-/* CONTATO */
-/* ========================================= */
-
-.contact{
-
-  background:
-  linear-gradient(
-    180deg,
-    #101c2e,
-    #08111d
-  );
-
-}
-
-.contact-form{
-
-  max-width: 900px;
-
-  margin: auto;
-
-}
-
-.input-group{
-
-  display: flex;
-
-  gap: 20px;
-
-}
-
-.input-box{
-
-  width: 100%;
-
-  margin-bottom: 25px;
-
-}
-
-.input-box label{
-
-  display: block;
-
-  margin-bottom: 10px;
-
-}
-
-.input-box input,
-.input-box textarea{
-
-  width: 100%;
-
-  padding: 18px;
-
-  border-radius: 15px;
-
-  border:
-  1px solid rgba(255,255,255,0.08);
-
-  background: rgba(255,255,255,0.05);
-
-  color: white;
-
-  outline: none;
-
-  font-family: inherit;
-
-}
-
-textarea{
-
-  resize: none;
-
-  height: 180px;
-
-}
-
-.submit-btn{
-
-  display: block;
-
-  margin: auto;
-
-}
-
-/* ========================================= */
-/* FOOTER */
-/* ========================================= */
-
-.footer{
-
-  padding: 70px 0 30px;
-
-  background: #070d16;
-
-}
-
-.footer-container{
-
-  display: flex;
-
-  justify-content: space-between;
-  align-items: center;
-
-  margin-bottom: 40px;
-
-}
-
-.footer-logo img{
-
-  width: 150px;
-
-}
-
-.footer-links{
-
-  display: flex;
-  flex-direction: column;
-
-  gap: 10px;
-
-}
-
-.footer-links a{
-
-  color: #d0d0d0;
-
-  text-decoration: none;
-
-}
-
-.footer-social{
-
-  display: flex;
-  gap: 15px;
-
-}
-
-.footer-social a{
-
-  width: 45px;
-  height: 45px;
-
-  border-radius: 50%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: rgba(255,255,255,0.08);
-
-  color: white;
-
-  text-decoration: none;
-
-}
-
-.copyright{
-
-  text-align: center;
-
-  color: #8e8e8e;
-
-}
-
-/* ========================================= */
-/* RESPONSIVO */
-/* ========================================= */
-
-@media(max-width: 1100px){
-
-  .cards,
-  .team-grid{
-    grid-template-columns: 1fr;
-  }
-
-  .project-container{
-    grid-template-columns: 1fr;
-  }
-
-}
-
-@media(max-width: 900px){
-
-  .navbar,
-  .nav-buttons{
-    display: none;
-  }
-
-  .hero-content h1{
-    font-size: 42px;
-  }
-
-  .hero-content p{
-    font-size: 16px;
-  }
-
-  .section-title,
-  .project-text h2{
-    font-size: 36px;
-  }
-
-  .input-group{
-    flex-direction: column;
-  }
-
-}
-
-@media(max-width: 600px){
-
-  .slider-buttons{
-    display: none;
-  }
-
-  .hero-content h1{
-    font-size: 32px;
-  }
-
-}
+</body>
+</html>
