@@ -7,35 +7,34 @@
 
   <title>NOUX | Software Developer</title>
 
-  <!-- FONT -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- ICONS -->
+  <
   <link rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-  <!-- HEADER -->
+
 
   <header class="header">
 
     <div class="container nav-container">
 
-      <!-- LOGO -->
+     
       <a href="#" class="logo">
         <img src="assets/noux.png" alt="Logo noux">
       </a>
 
-      <!-- MENU -->
+
       <nav class="navbar">
 
         <a href="#home">Home</a>
@@ -46,7 +45,6 @@
 
       </nav>
 
-      <!-- BOTÕES -->
       <div class="nav-buttons">
 
         <button class="btn-outline">
@@ -103,7 +101,6 @@
 
       </div>
 
-      <!-- SLIDE 2 -->
 
       <div class="slide">
 
@@ -135,11 +132,11 @@
 
       </div>
 
-      <!-- SLIDE 3 -->
+  
 
       <div class="slide">
 
-  <img src="assets/reuniao-negocios.png" alt="reunião">
+<img src="assets/reuniao-equipe.png" alt="Reunião da equipe">
 
         <div class="overlay"></div>
 
@@ -169,7 +166,7 @@
 
     </div>
 
-    <!-- BOTÕES -->
+   
 
     <div class="slider-buttons">
 
@@ -183,7 +180,6 @@
 
     </div>
 
-    <!-- DOTS -->
 
     <div class="slider-dots">
 
@@ -195,7 +191,6 @@
 
   </section>
 
-  <!-- SERVIÇOS -->
 
   <section class="services" id="services">
 
@@ -207,7 +202,7 @@
 
       <div class="cards">
 
-        <!-- CARD -->
+        
 
         <div class="service-card">
 
@@ -224,7 +219,7 @@
 
         </div>
 
-        <!-- CARD -->
+    
 
         <div class="service-card">
 
@@ -241,7 +236,6 @@
 
         </div>
 
-        <!-- CARD -->
 
         <div class="service-card">
 
@@ -264,7 +258,7 @@
 
   </section>
 
-  <!-- EQUIPE -->
+  
 
   <section class="team" id="team">
 
@@ -276,7 +270,7 @@
 
       <div class="team-grid">
 
-        <!-- MEMBRO -->
+
 
         <div class="team-card">
 
@@ -290,7 +284,7 @@
 
         </div>
 
-        <!-- MEMBRO -->
+
 
         <div class="team-card">
 
@@ -304,7 +298,7 @@
 
         </div>
 
-        <!-- MEMBRO -->
+ 
 
         <div class="team-card">
 
@@ -324,13 +318,13 @@
 
   </section>
 
-  <!-- PROJETO -->
+
 
   <section class="project" id="project">
 
     <div class="container project-container">
 
-      <!-- TEXTO -->
+      
 
       <div class="project-text">
 
@@ -354,11 +348,11 @@
           dos profissionais da saúde.
         </p>
 
-        <!-- BOTÕES -->
-
+        
         <div class="project-buttons">
 
-          <a href="rota-saude.html" class="btn-primary">
+          <a href="https://www.figma.com/proto/sUkL5zV8Zeb7IrXJdehvYU/rota-sa%C3%BAde?node-id=1-25&p=f&t=JTvbhsJciHrOC0Fd-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=6235%3A287"
+           target="_blank" class="btn-primary">
             Conhecer projeto
           </a>
 
@@ -375,7 +369,6 @@
 
       </div>
 
-      <!-- MOCKUP -->
 
       <div class="project-image">
 
@@ -388,7 +381,6 @@
 
   </section>
 
-  <!-- CONTATO -->
 
   <section class="contact" id="contact">
 
@@ -441,13 +433,13 @@
 
   </section>
 
-  <!-- FOOTER -->
+
 
   <footer class="footer">
 
     <div class="container footer-container">
 
-      <!-- LOGO -->
+     
 
       <div class="footer-logo">
 
@@ -455,7 +447,7 @@
 
       </div>
 
-      <!-- LINKS -->
+      
 
       <div class="footer-links">
 
@@ -466,7 +458,6 @@
 
       </div>
 
-      <!-- SOCIAL -->
 
       <div class="footer-social">
 
