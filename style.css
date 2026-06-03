@@ -1,564 +1,789 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: 'Montserrat', sans-serif;
+  background: #060816;
+  color: white;
+  overflow-x: hidden;
+}
+
+.container{
+  width: 90%;
+  max-width: 1300px;
+  margin: auto;
+}
+
+
+
+.header{
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+
+  background: rgba(10, 6, 25, 0.78);
+
+  backdrop-filter: blur(14px);
+
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.nav-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 90px;
+}
+
+.logo img{
+  width: 250px;
+}
+
+
+.navbar{
+  display: flex;
+  gap: 35px;
+}
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+.navbar a{
+  text-decoration: none;
+  color: #b58cff;
+  font-weight: 600;
+  transition: .3s;
+}
 
-  <title>NOUX | Software Developer</title>
+.navbar a:hover{
+  color: #d9b8ff;
+}
 
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+.btn-primary,
+.btn-outline{
+  padding: 14px 28px;
+  border-radius: 40px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: .4s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+}
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+.btn-primary{
+  background: linear-gradient(
+    135deg,
+    #7b2cff,
+    #c94cff
+  );
 
-  <
-  <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  color: white;
+  border: none;
 
-  <link rel="stylesheet" href="style.css">
+  box-shadow: 0 15px 35px rgba(123,44,255,.35);
+}
 
-</head>
+.btn-primary:hover{
+  transform: translateY(-5px);
+}
 
-<body>
+.btn-outline{
+  border: 2px solid #a855f7;
+  color: #c084fc;
+  background: transparent;
+}
 
+.btn-outline:hover{
+  background: #a855f7;
+  color: white;
+}
 
 
-  <header class="header">
+.hero{
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
 
-    <div class="container nav-container">
+.slider{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
 
-     
-      <a href="#" class="logo">
-        <img src="assets/noux.png" alt="Logo noux">
-      </a>
 
 
-      <nav class="navbar">
+.slide{
+  position: absolute;
+  width: 100%;
+  height: 100%;
 
-        <a href="#home">Home</a>
-        <a href="#services">Serviços</a>
-        <a href="#team">Equipe</a>
-        <a href="#project">Projeto</a>
-        <a href="#contact">Contato</a>
+  opacity: 0;
 
-      </nav>
+  transition: opacity 1s ease;
 
-      <div class="nav-buttons">
+  overflow: hidden;
+}
 
-        <button class="btn-outline">
-          Login
-        </button>
+.slide.active{
+  opacity: 1;
+  z-index: 2;
+}
 
-        <button class="btn-primary">
-          Começar agora
-        </button>
 
-      </div>
+.slide img{
+  width: 100%;
+  height: 100%;
 
-    </div>
+  object-fit: cover;
 
-  </header>
+  object-position: center center;
 
-  <!-- HERO / CARROSSEL -->
+  transform: scale(1.03);
 
-  <section class="hero" id="home">
+  animation: zoomHero 8s ease-in-out infinite;
+}
 
-    <div class="slider">
 
-      <!-- SLIDE 1 -->
+.overlay{
+  position: absolute;
+  inset: 0;
 
-      <div class="slide active">
+  background: linear-gradient(
+    135deg,
+    rgba(0,0,0,0.82),
+    rgba(25,10,45,0.60),
+    rgba(90,20,120,0.18)
+  );
 
-        <img src="assets/carrossel1.png" alt="Imagem Principal">
+  z-index: 1;
+}
 
-        <!-- OVERLAY -->
-        <div class="overlay"></div>
 
-        <!-- TEXTO -->
-        <div class="hero-content">
+.hero-content{
+  position: absolute;
 
-          <span class="tag">
-            Desenvolvimento • UI/UX • Tecnologia
-          </span>
+  top: 50%;
+  left: 10%;
 
-          <h1>
-            CONSTRUINDO
-            O FUTURO DIGITAL
-          </h1>
+  transform: translateY(-50%);
 
-          <p>
-            Combinando modernidade, versatilidade e inovação
-            para impulsionar os seus negócios.
-          </p>
+  z-index: 3;
 
-          <a href="#services" class="btn-primary">
-            Saiba mais
-          </a>
+  max-width: 650px;
 
-        </div>
+  animation: fadeUp 1s ease;
+}
 
-      </div>
+.hero-content h1{
+  font-size: 72px;
 
+  line-height: 1.05;
 
-      <div class="slide">
+  color: white;
 
-        <img src="assets/desenvolvendo.png" alt="Desenvolvimento">
+  margin-bottom: 25px;
 
-        <div class="overlay"></div>
+  font-weight: 800;
 
-        <div class="hero-content">
+  letter-spacing: -2px;
 
-          <span class="tag">
-            Sistemas Inteligentes
-          </span>
+  text-shadow: 0 10px 25px rgba(0,0,0,.35);
+}
 
-          <h1>
-            SOFTWARES
-            QUE GERAM RESULTADOS
-          </h1>
 
-          <p>
-            Os melhores softwares para quem busca
-            performance, experiência e inovação.
-          </p>
+.hero-content p{
+  color: rgba(255,255,255,.88);
 
-          <a href="#services" class="btn-primary">
-            Conhecer serviços
-          </a>
+  font-size: 19px;
 
-        </div>
+  line-height: 1.8;
 
-      </div>
+  margin-bottom: 35px;
 
-  
+  max-width: 540px;
+}
 
-      <div class="slide">
 
-<img src="assets/reuniao-equipe.png" alt="Reunião da equipe">
+.slider-buttons{
+  position: absolute;
 
-        <div class="overlay"></div>
+  width: 100%;
 
-        <div class="hero-content">
+  top: 50%;
 
-          <span class="tag">
-            Experiências Digitais
-          </span>
+  transform: translateY(-50%);
 
-          <h1>
-            EXPERIÊNCIAS
-            DIGITAIS QUE CONECTAM
-          </h1>
+  display: flex;
 
-          <p>
-            Impulsionando empresas para o futuro
-            através da tecnologia.
-          </p>
+  justify-content: space-between;
 
-          <a href="#project" class="btn-primary">
-            Ver projetos
-          </a>
+  padding-inline: 30px;
 
-        </div>
+  z-index: 5;
+}
 
-      </div>
+.slider-buttons button{
+  width: 55px;
+  height: 55px;
 
-    </div>
+  border-radius: 50%;
 
-   
+  border: none;
 
-    <div class="slider-buttons">
+  background: rgba(255,255,255,.15);
 
-      <button id="prev">
-        <i class="fa-solid fa-chevron-left"></i>
-      </button>
+  color: white;
 
-      <button id="next">
-        <i class="fa-solid fa-chevron-right"></i>
-      </button>
+  cursor: pointer;
 
-    </div>
+  font-size: 18px;
 
+  transition: .4s;
 
-    <div class="slider-dots">
+  backdrop-filter: blur(6px);
+}
 
-      <span class="dot active-dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
+.slider-buttons button:hover{
+  background: #c94cff;
 
-    </div>
+  color: white;
 
-  </section>
+  transform: scale(1.1);
+}
 
 
-  <section class="services" id="services">
+.slider-dots{
+  position: absolute;
 
-    <div class="container">
+  bottom: 40px;
+  left: 50%;
 
-      <h2 class="section-title">
-        Nossos Serviços
-      </h2>
+  transform: translateX(-50%);
 
-      <div class="cards">
+  display: flex;
 
-        
+  gap: 12px;
 
-        <div class="service-card">
+  z-index: 10;
+}
 
-          <div class="card-icon">
-            <i class="fa-solid fa-code"></i>
-          </div>
+.dot{
+  width: 14px;
+  height: 14px;
 
-          <h3>Desenvolvimento</h3>
+  border-radius: 50%;
 
-          <p>
-            Nosso foco é criar aplicações web e mobile
-            com performance, experiência e crescimento.
-          </p>
+  background: rgba(255,255,255,.4);
 
-        </div>
+  cursor: pointer;
 
-    
+  transition: .4s;
+}
 
-        <div class="service-card">
+.active-dot{
+  background: #c94cff;
+  transform: scale(1.2);
+}
 
-          <div class="card-icon">
-            <i class="fa-solid fa-gear"></i>
-          </div>
 
-          <h3>Automação</h3>
+section{
+  padding: 120px 0;
+}
 
-          <p>
-            Automatizamos processos para aumentar produtividade,
-            reduzir erros e otimizar operações.
-          </p>
+.section-title{
+  text-align: center;
+  font-size: 48px;
+  margin-bottom: 70px;
+}
 
-        </div>
 
+.cards{
+  display: grid;
 
-        <div class="service-card">
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
 
-          <div class="card-icon">
-            <i class="fa-solid fa-lightbulb"></i>
-          </div>
+  gap: 30px;
+}
 
-          <h3>Soluções Inteligentes</h3>
+.service-card{
+  background: rgba(255,255,255,.04);
 
-          <p>
-            Criamos soluções tecnológicas modernas focadas
-            em inovação, performance e crescimento.
-          </p>
+  padding: 45px 35px;
 
-        </div>
+  border-radius: 28px;
 
-      </div>
+  box-shadow: 0 20px 50px rgba(0,0,0,.06);
 
-    </div>
+  backdrop-filter: blur(10px);
 
-  </section>
+  border: 1px solid rgba(201,76,255,.08);
 
-  
+  transition: .4s;
+}
 
-  <section class="team" id="team">
+.service-card:hover{
+  transform: translateY(-10px);
 
-    <div class="container">
+  border-color: rgba(201,76,255,.25);
+}
 
-      <h2 class="section-title">
-        Nossa Equipe
-      </h2>
+.card-icon{
+  width: 75px;
+  height: 75px;
 
-      <div class="team-grid">
+  border-radius: 20px;
 
+  background: rgba(201,76,255,.12);
 
+  display: flex;
 
-        <div class="team-card">
+  align-items: center;
+  justify-content: center;
 
-          <div class="team-image">
-            <img src="assets/integrante1.jpeg" alt="Laura">
-          </div>
+  margin-bottom: 25px;
+}
 
-          <h3>Laura Amaral</h3>
+.card-icon i{
+  font-size: 30px;
+  color: #c94cff;
+}
 
-          <span>UI/UX Designer</span>
+.service-card h3{
+  margin-bottom: 18px;
+  font-size: 24px;
+}
 
-        </div>
+.service-card p{
+  line-height: 1.8;
+}
 
 
+.team-grid{
+  display: grid;
 
-        <div class="team-card">
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
 
-          <div class="team-image">
-            <img src="assets/felipe.png" alt="Felipe">
-          </div>
+  gap: 35px;
+}
 
-          <h3>Felipe Ribeiro</h3>
+.team-card{
+  border-radius: 28px;
 
-          <span>Frontend Developer</span>
+  overflow: hidden;
 
-        </div>
+  text-align: center;
 
- 
+  padding-bottom: 30px;
 
-        <div class="team-card">
+  transition: .4s;
 
-          <div class="team-image">
-            <img src="assets/rafael.png" alt="Rafael">
-          </div>
+  box-shadow: 0 20px 50px rgba(0,0,0,.06);
 
-          <h3>Rafael Ferrete</h3>
+  background: rgba(255,255,255,.04);
 
-          <span>Backend Developer</span>
+  border: 1px solid rgba(255,255,255,.06);
 
-        </div>
+  backdrop-filter: blur(10px);
+}
 
-      </div>
+.team-card:hover{
+  transform: translateY(-10px);
 
-    </div>
+  border-color: rgba(201,76,255,.25);
+}
 
-  </section>
+.team-image{
+  height: 320px;
+  overflow: hidden;
+}
 
+.team-image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 
+  transition: .5s;
+}
 
-  <section class="project" id="project">
+.team-card:hover img{
+  transform: scale(1.08);
+}
 
-    <div class="container project-container">
+.team-card h3{
+  margin-top: 25px;
+  margin-bottom: 8px;
+}
 
-      
+.team-card span{
+  color: #c94cff;
+  font-weight: 600;
+}
 
-      <div class="project-text">
 
-        <span class="project-tag">
-          Projeto em destaque
-        </span>
+.project{
+  background: linear-gradient(
+    135deg,
+    #090611,
+    #140b24,
+    #1d1033
+  );
+}
 
-        <h2>
-          Rota Saúde
-        </h2>
+.project-container{
+  display: flex;
 
-        <p>
-          O Rota Saúde é uma solução digital criada
-          para conectar agentes de saúde e pacientes,
-          otimizando atendimentos domiciliares.
-        </p>
+  align-items: center;
 
-        <p>
-          A plataforma melhora o acompanhamento
-          de pacientes e moderniza a rotina
-          dos profissionais da saúde.
-        </p>
+  justify-content: space-between;
 
-        
-        <div class="project-buttons">
+  gap: 70px;
 
-          <a href="https://www.figma.com/proto/sUkL5zV8Zeb7IrXJdehvYU/rota-sa%C3%BAde?node-id=1-25&p=f&t=JTvbhsJciHrOC0Fd-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=6235%3A287"
-           target="_blank" class="btn-primary">
-            Conhecer projeto
-          </a>
+  flex-wrap: wrap;
+}
 
-          <a href="https://youtu.be/hm53JdEea9E?si=12CqnuNCPWCRWoyg"
-             target="_blank"
-             class="btn-outline project-video-btn">
+.project-text{
+  flex: 1;
+}
 
-            <i class="fa-solid fa-play"></i>
-            Ver Pitch
+.project-tag{
+  display: inline-block;
 
-          </a>
+  background: rgba(201,76,255,.12);
 
-        </div>
+  color: #d9a3ff;
 
-      </div>
+  padding: 10px 18px;
 
+  border-radius: 40px;
 
-      <div class="project-image">
+  margin-bottom: 20px;
 
-        <img src="assets/mockup.png"
-        alt="Mockup Rota Saúde">
+  font-weight: 600;
+}
 
-      </div>
+.project-text h2{
+  font-size: 56px;
 
-    </div>
+  margin-bottom: 25px;
+}
 
-  </section>
+.project-text p{
+  line-height: 1.9;
 
+  margin-bottom: 20px;
+}
 
-  <section class="contact" id="contact">
+.project-buttons{
+  display: flex;
 
-    <div class="container">
+  gap: 20px;
 
-      <h2 class="section-title">
-        Entre em Contato
-      </h2>
+  margin-top: 35px;
 
-      <form class="contact-form">
+  flex-wrap: wrap;
+}
 
-        <div class="input-group">
+.project-image{
+  flex: 1;
 
-          <div class="input-box">
+  display: flex;
 
-            <label>Nome</label>
+  justify-content: center;
+}
 
-            <input type="text"
-            placeholder="Digite seu nome">
+.project-image img{
+  width: 100%;
 
-          </div>
+  max-width: 430px;
 
-          <div class="input-box">
+  animation: floating 4s infinite ease-in-out;
 
-            <label>Email</label>
+  filter: drop-shadow(0 25px 40px rgba(123,44,255,.25));
+}
 
-            <input type="email"
-            placeholder="Digite seu email">
+.contact{
+  background: #0b0718;
+}
 
-          </div>
+.contact-form{
+  max-width: 900px;
 
-        </div>
+  margin: auto;
+}
 
-        <div class="input-box">
+.input-group{
+  display: flex;
 
-          <label>Mensagem</label>
+  gap: 20px;
 
-          <textarea
-          placeholder="Digite sua mensagem"></textarea>
+  margin-bottom: 20px;
 
-        </div>
+  flex-wrap: wrap;
+}
 
-        <button class="btn-primary submit-btn">
-          Enviar mensagem
-        </button>
+.input-box{
+  flex: 1;
 
-      </form>
+  display: flex;
 
-    </div>
+  flex-direction: column;
+}
 
-  </section>
+.input-box label{
+  margin-bottom: 10px;
 
+  font-weight: 600;
+}
 
+.input-box input,
+.input-box textarea{
+  padding: 18px;
 
-  <footer class="footer">
+  border-radius: 18px;
 
-    <div class="container footer-container">
+  border: 1px solid rgba(201,76,255,.15);
 
-     
+  background: rgba(255,255,255,.04);
 
-      <div class="footer-logo">
+  color: white;
 
-        <img src="assets/noux.png" alt="Logo Noux">
+  font-family: inherit;
 
-      </div>
+  font-size: 16px;
 
-      
+  outline: none;
+}
 
-      <div class="footer-links">
+.input-box textarea{
+  height: 180px;
 
-        <a href="#">Home</a>
-        <a href="#">Serviços</a>
-        <a href="#">Equipe</a>
-        <a href="#">Projeto</a>
+  resize: none;
+}
 
-      </div>
+.submit-btn{
+  margin-top: 25px;
+}
 
 
-      <div class="footer-social">
 
-        <a href="#">
-          <i class="fa-brands fa-instagram"></i>
-        </a>
+.footer{
+  padding: 60px 35px 35px;
 
-        <a href="#">
-          <i class="fa-brands fa-linkedin-in"></i>
-        </a>
+  background: linear-gradient(
+    135deg,
+    #05040c,
+    #12081d,
+    #1c0d2e
+  );
 
-        <a href="#">
-          <i class="fa-brands fa-github"></i>
-        </a>
+  color: white;
 
-      </div>
+  border-top: 1px solid rgba(255,255,255,.05);
+}
 
-    </div>
+.footer-logo img{
+  width: 220px;
+  height: auto;
+  object-fit: contain;
+}
 
-    <p class="copyright">
-      © 2026 NOUX — Todos os direitos reservados
-    </p>
+.footer-container{
+  display: flex;
 
-  </footer>
+  align-items: center;
 
-  <!-- SCRIPT -->
+  justify-content: space-between;
 
-  <script>
+  gap: 40px;
 
-    const slides = document.querySelectorAll(".slide");
-    const dots = document.querySelectorAll(".dot");
+  flex-wrap: wrap;
+}
 
-    const next = document.getElementById("next");
-    const prev = document.getElementById("prev");
+.footer-links a{
+  color: #d9d9d9;
 
-    let current = 0;
+  text-decoration: none;
 
-    function updateSlider(index){
+  transition: .3s;
+}
 
-      slides.forEach(slide => {
-        slide.classList.remove("active");
-      });
+.footer-links a:hover{
+  color: #c94cff;
+}
 
-      dots.forEach(dot => {
-        dot.classList.remove("active-dot");
-      });
+.footer-social{
+  display: flex;
+  gap: 18px;
+}
 
-      slides[index].classList.add("active");
-      dots[index].classList.add("active-dot");
+.footer-social a{
+  width: 42px;
+  height: 42px;
 
-    }
+  border-radius: 50%;
 
-    next.addEventListener("click", () => {
+  background: rgba(255,255,255,.08);
 
-      current++;
+  color: #c94cff;
 
-      if(current >= slides.length){
-        current = 0;
-      }
+  display: flex;
 
-      updateSlider(current);
+  align-items: center;
+  justify-content: center;
 
-    });
+  text-decoration: none;
 
-    prev.addEventListener("click", () => {
+  transition: .4s;
+}
 
-      current--;
+.footer-social a:hover{
+  background: linear-gradient(
+    135deg,
+    #7b2cff,
+    #c94cff
+  );
 
-      if(current < 0){
-        current = slides.length - 1;
-      }
+  color: white;
 
-      updateSlider(current);
+  transform: translateY(-5px);
+}
 
-    });
+.copyright{
+  text-align: center;
 
-    dots.forEach((dot, index) => {
+  margin-top: 30px;
 
-      dot.addEventListener("click", () => {
+  color: rgba(255,255,255,.65);
+}
 
-        current = index;
+/* ANIMAÇÕES */
 
-        updateSlider(current);
+@keyframes floating{
 
-      });
+  0%{
+    transform: translateY(0px);
+  }
 
-    });
+  50%{
+    transform: translateY(-15px);
+  }
 
-    setInterval(() => {
+  100%{
+    transform: translateY(0px);
+  }
 
-      current++;
+}
 
-      if(current >= slides.length){
-        current = 0;
-      }
+@keyframes fadeUp{
 
-      updateSlider(current);
+  from{
+    opacity: 0;
+    transform: translateY(40px);
+  }
 
-    }, 5000);
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
 
-  </script>
+}
 
-</body>
-</html>
+@keyframes zoomHero{
+
+  0%{
+    transform: scale(1.03);
+  }
+
+  50%{
+    transform: scale(1.08);
+  }
+
+  100%{
+    transform: scale(1.03);
+  }
+
+}
+
+/* RESPONSIVO */
+
+@media(max-width: 992px){
+
+  .navbar{
+    display: none;
+  }
+
+  .nav-buttons{
+    display: none;
+  }
+
+  .hero-content{
+    left: 7%;
+    max-width: 90%;
+  }
+
+  .hero-content h1{
+    font-size: 46px;
+    line-height: 1.1;
+  }
+
+  .hero-content p{
+    font-size: 16px;
+  }
+
+  .slider-buttons{
+    padding-inline: 15px;
+  }
+
+  .project-container{
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .project-buttons{
+    justify-content: center;
+  }
+
+  .section-title,
+  .project-text h2{
+    font-size: 38px;
+  }
+
+  .footer-container{
+    flex-direction: column;
+    text-align: center;
+  }
+
+}
+
+@media(max-width: 600px){
+
+  .hero-content h1{
+    font-size: 36px;
+  }
+
+  .hero-content p{
+    font-size: 15px;
+  }
+
+  .btn-primary,
+  .btn-outline{
+    padding: 12px 22px;
+    font-size: 14px;
+  }
+
+  .section-title{
+    font-size: 30px;
+  }
+
+}
